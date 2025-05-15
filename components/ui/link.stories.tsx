@@ -1,16 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Link } from "./link";
-import { action } from "@storybook/addon-actions";
+
+const ExampleTarget = () => (
+  <div id="example-target" style={{ marginTop: '500px', padding: '20px', background: '#f0f0f0' }}>
+    Target Element
+  </div>
+);
 
 const meta: Meta<typeof Link> = {
   title: "Components/ui/Link",
   component: Link,
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
   args: {
-    children: "Example Link",
-    href: "/",
+    children: "Scroll to Target",
+    targetId: "example-target",
   },
   argTypes: {
     variant: {
@@ -21,7 +26,19 @@ const meta: Meta<typeof Link> = {
       control: "select",
       options: ["default", "sm", "lg"],
     },
+    targetId: {
+      control: "text",
+      description: "ID of the target element to scroll to",
+    },
   },
+  decorators: [
+    (Story) => (
+      <div>
+        <Story />
+        <ExampleTarget />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
@@ -31,7 +48,7 @@ type Story = StoryObj<typeof Link>;
 export const Default: Story = {
     args: {
         variant: "default",
-        children: "Default Link",
+        children: "Scroll to Element",
         size: "default",
     }
 };
@@ -39,28 +56,28 @@ export const Default: Story = {
 export const Secondary: Story = {
     args: {
         variant: "secondary",
-        children: "Secondary Link",
+        children: "Scroll to Element",
     }
 };
 
 export const Small: Story = {
   args: {
     size: "sm",
-    children: "Small Link",
+    children: "Small Scroll Link",
   },
 };
 
 export const Large: Story = {
   args: {
     size: "lg",
-    children: "Large Link",
+    children: "Large Scroll Link",
   },
 };
 
 export const Underlined: Story = {
   args: {
     variant: "underline",
-    children: "Underlined Link",
+    children: "Underlined Scroll Link",
     className: "text-primary-text"
   },
 };
@@ -81,26 +98,11 @@ export const WithIcon: Story = {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-          <polyline points="10 17 15 12 10 7" />
-          <line x1="15" y1="12" x2="3" y2="12" />
+          <path d="M12 5v14" />
+          <path d="m19 12-7 7-7-7" />
         </svg>
-        Link with Icon
+        Scroll Down
       </>
     ),
-  },
-};
-
-export const Muted: Story = {
-  args: {
-    variant: "muted",
-    children: "Muted Link",
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    variant: "ghost",
-    children: "Ghost Link",
   },
 };

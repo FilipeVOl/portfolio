@@ -1,20 +1,22 @@
+"use client"
+
 import { Link } from '@/components/ui/link'
 
 export default function Navbar() {
   return (
-    <nav className="h-full flex items-center justify-between mx-6 my-2">
-      <Link href="/" variant="default" className="font-medium text-base">
+    <nav className="h-full flex items-center justify-between container mx-auto px-6">
+      <Link variant="default" className="font-medium text-base" targetId="home">
         Filipe<span className="text-secondary">.dev</span>
       </Link>
       
       <div className="flex gap-4">
-        <Link href="/projects" variant="default">
+        <Link variant="default" targetId="about">
           About
         </Link>
-        <Link href="/about" variant="default">
+        <Link variant="default" targetId="projects">
           Projects
         </Link>
-        <Link href="/contact" variant="default">
+        <Link variant="default" targetId="contact">
           Contact
         </Link>
       </div>

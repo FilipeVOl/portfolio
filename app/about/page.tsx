@@ -2,13 +2,14 @@ import { Link } from "@/components/ui/link"
 import { Typography } from "@/components/ui/typography"
 import { Github, Instagram, Linkedin } from 'lucide-react';
 import { Icon } from "@/components/ui/icon";
+import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
   return (
-    <main className="container mx-auto px-6 py-12 min-h-screen">
+    <main id="about" className="container mx-auto px-6 py-12 min-h-auto border-b border-black/10">
       <div className="max-w-3xl mx-auto space-y-8">
         <div className="space-y-4">
-          <Typography variant="h1">About me</Typography>
+          <Typography variant="h1">About <span className="text-secondary">me</span></Typography>
           <Typography variant="lead">
             I am a Front-End Developer located in Anápolis, Goiás, Brazil. I currently work as a part time Junior Front-End Developer for Unievangélica, located in Anápolis. I am eager to learn and grow as a software engineer and increase my skills.
           </Typography>
@@ -32,40 +33,9 @@ export default function AboutPage() {
             </div>
           </Typography>
         </div>
-
-        <div>
-          <Typography variant="h2">Experiência</Typography>
-          <Typography variant="p">
-            Ao longo da minha jornada, trabalhei em diversos projetos desafiadores
-            que me permitiram aprimorar minhas habilidades e aprender
-            constantemente. Meu foco está sempre em escrever código limpo,
-            escalável e bem documentado.
-          </Typography>
-
-          <div className="not-prose">
-            <Link
-              href="/projects"
-              variant="default"
-              className="inline-flex items-center"
-            >
-              Ver meus projetos
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="ml-2 h-4 w-4"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+        <div className="flex gap-14">
+          <Button variant="default" size="lg">CONTACT ME</Button>
+          <Button variant="secondary" size="lg">DOWNLOAD CV</Button>
         </div>
       </div>
     </main>

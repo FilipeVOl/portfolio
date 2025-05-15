@@ -28,8 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-transparent border-b border-black/10 shadow-sm h-16">
-          <Navbar />
+        <div className="h-16">
+          <div className="fixed top-0 left-0 right-0 bg-transparent border-b border-black/10 shadow-sm h-16 backdrop-blur-sm z-50">
+            <Navbar />
+          </div>
         </div>
         <div className="bg-primary-background">
           {children}
