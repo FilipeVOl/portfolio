@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
   return (
-    <main id="about" className="container mx-auto px-6 py-12 min-h-auto border-b border-black/10">
-      <div className="max-w-3xl mx-auto space-y-8">
+    <main id="about" className="container mx-auto px-6 py-12 min-h-auto">
+      <div className="max-w-3xl  space-y-8">
         <div className="space-y-4">
           <Typography variant="h1">About <span className="text-secondary">me</span></Typography>
           <Typography variant="lead">
@@ -33,7 +33,7 @@ export default function AboutPage() {
             </div>
           </Typography>
         </div>
-        <div className="flex gap-14">
+        <div className="flex flex-col gap-4 md:flex-row md:gap-14">
           <Button variant="default" size="lg">CONTACT ME</Button>
           <Button variant="secondary" size="lg">DOWNLOAD CV</Button>
         </div>

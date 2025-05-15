@@ -10,7 +10,7 @@ const linkVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-primary-text hover:text-secondary/80",
+        default: "text-primary-text hover:text-secondary/80 ",
         secondary: "text-secondary-text hover:text-secondary-text/80",
         underline: "underline-offset-4 hover:underline",
         icon: "inline-flex items-center gap-2",
