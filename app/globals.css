@@ -16,3 +16,10 @@
   --color-tertiary: #2E294E;
 }
 
+.date {
+  color: var(--color-primary-text);
+}
+
+.vertical-timeline::before {
+  background: var(--color-primary-text) !important;
+}
