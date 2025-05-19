@@ -1,8 +1,10 @@
+"use client"
 import { Link } from "@/components/ui/link"
 import { Typography } from "@/components/ui/typography"
 import { Github, Instagram, Linkedin } from 'lucide-react';
 import { Icon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
 
 export default function AboutPage() {
   return (
@@ -34,7 +36,41 @@ export default function AboutPage() {
           </Typography>
         </div>
         <div className="flex flex-col gap-4 md:flex-row md:gap-14">
-          <Button variant="default" size="lg">CONTACT ME</Button>
+          <Dialog><DialogTrigger asChild><Button variant="default" size="lg">CONTACT ME</Button></DialogTrigger>
+          
+          <DialogContent className="bg-primary-background">
+            <DialogDescription>
+            <Typography variant="p" className="mb-4 font-bold">
+              Are you interested in working with me? <br /> If you have any
+              questions or would like to get in touch, please use the form
+              below, thank you!
+            </Typography>
+            </DialogDescription>
+            <form>
+              <div className="flex flex-col gap-4 md:flex-row">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="outline-none w-full rounded-md border-2 border-primary p-2 shadow-lg shadow-primary/20 focus:border-secondary focus:shadow-secondary/50 focus:brightness-110 hover:border-secondary hover:shadow-secondary/50 hover:brightness-110 transition-all duration-300"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="outline-none w-full rounded-md border-2 border-primary p-2 shadow-lg shadow-primary/20 active:border-secondary hover:border-secondary hover:shadow-secondary/50 hover:brightness-110 transition-all duration-300"
+                />
+              </div>
+              <textarea
+                placeholder="Message"
+                className="outline-none w-full rounded-md border-2 border-primary p-2 shadow-lg shadow-primary/20 mt-4 active:border-secondary hover:border-secondary hover:shadow-secondary/50 hover:brightness-110 transition-all duration-300"
+              />
+              <DialogFooter>
+              <Button type="submit" className="btn btn-primary mt-4">
+                Send
+              </Button>
+              </DialogFooter>
+            </form>
+          </DialogContent>
+          </Dialog>
           <Button variant="secondary" size="lg">DOWNLOAD CV</Button>
         </div>
       </div>

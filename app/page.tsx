@@ -5,6 +5,8 @@ import * as motion from "motion/react-client"
 import ExperiencePage from "./experience/page";
 import PortfolioPage from "./portfolio/page";
 import Divider from "./components/Divider";
+import EducationPage from "./education/page";
+import ContactPage from "./contact/page";
 export default function Home() {
   return (
     <motion.div
@@ -18,7 +20,11 @@ export default function Home() {
       <Divider />
       <ExperiencePage />
       <Divider />
+      <EducationPage />
+      <Divider />
       <PortfolioPage />
+      <Divider />
+      <ContactPage />
     </motion.div>
   );
 }
