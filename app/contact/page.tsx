@@ -34,15 +34,19 @@ const ContactPage = () => {
               questions or would like to get in touch, please use the form
               below, thank you!
             </Typography>
-            <form>
-              <div className="flex flex-col gap-4 md:flex-row">
+            <form action="https://api.web3forms.com/submit" method='POST'>
+            <input type='hidden' name='access_key' value="a46a66dd-b920-47d8-9da8-1f7928f993a9"/>              <div className="flex flex-col gap-4 md:flex-row">
                 <input
                   type="text"
+                  required
+                  name="first_name"
                   placeholder="Name"
                   className="outline-none w-full rounded-md border-2 border-primary p-2 shadow-lg shadow-primary/20 focus:border-secondary focus:shadow-secondary/50 focus:brightness-110 hover:border-secondary hover:shadow-secondary/50 hover:brightness-110 transition-all duration-300"
                 />
                 <input
                   type="email"
+                  required
+                  name="email"
                   placeholder="Email"
                   className="outline-none w-full rounded-md border-2 border-primary p-2 shadow-lg shadow-primary/20 active:border-secondary hover:border-secondary hover:shadow-secondary/50 hover:brightness-110 transition-all duration-300"
                 />
@@ -126,7 +130,7 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="container mx-auto px-6" >
+    <main className="container mx-auto px-6" id="contact">
       <Typography variant="h1" className="mb-2 text-start">
         Contact<span className="text-secondary">.</span>
       </Typography>
