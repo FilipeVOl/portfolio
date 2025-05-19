@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import type { TimelineElement } from '@/types';
-import { Check, GitPullRequest, GitBranch, Calendar, Star, AlertTriangle, GraduationCap, Code2 } from 'lucide-react';
+import { GitBranch, GraduationCap, Code2 } from 'lucide-react';
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
 import "react-vertical-timeline-component/style.min.css";
 import { Typography } from '../typography';

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import AboutPage from "./about/page";
 import SkillsPage from "./skills/page";
 import * as motion from "motion/react-client"

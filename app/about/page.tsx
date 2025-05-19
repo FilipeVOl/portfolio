@@ -1,5 +1,4 @@
 "use client"
-import { Link } from "@/components/ui/link"
 import { Typography } from "@/components/ui/typography"
 import { Github, Instagram, Linkedin } from 'lucide-react';
 import { Icon } from "@/components/ui/icon";

@@ -1,4 +1,3 @@
-import { Code2, GitBranch, GraduationCap } from 'lucide-react';
 import type { TimelineElement } from '@/types';
 
 export const experienceItems: TimelineElement[] = [

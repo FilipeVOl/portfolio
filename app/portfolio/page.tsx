@@ -1,6 +1,5 @@
 "use client"
 import { Typography } from "@/components/ui/typography";
-import Divider from "../components/Divider";
 import Image from "next/image";
 
 export default function PortfolioPage() {

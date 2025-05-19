@@ -124,7 +124,7 @@ export const CustomColors: Story = {
     connectorColor: 'accent',
     className: commonClasses,
   },
-  play: async ({ canvasElement, args }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
     // Increase wait time to ensure elements are rendered
