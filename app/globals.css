@@ -2,16 +2,16 @@
 @import "tw-animate-css";
 
 @layer base {
-  body {
     @apply bg-primary-background dark:bg-primary-background-dark;
-  }
 }
 
 @theme {
   --color-primary-background: #fffafa;
   --color-primary-background-dark: #181818;
   --color-primary: #011638;
+  --color-primary-dark: #FFB6C1;
   --color-primary-text: #1b1b1b;
+  
   --color-secondary: #489FB5;
   --color-secondary-text: #EDE7E3;
   --color-tertiary: #2E294E;
