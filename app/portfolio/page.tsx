@@ -1,31 +1,85 @@
 "use client"
 import { Typography } from "@/components/ui/typography";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Dialog from "../components/Dialog";
 import { Button } from "@/components/ui/button";
 
 export default function PortfolioPage() {
-  const [openDialog, setOpenDialog] = useState(false);
   const imgFields = [
 
     {
       id: 3,
       href: "https://plataformajf.unievangelica.edu.br/",
+      category: ["web-sites", "frontend"],
       src: "/fanstone.png",
       alt: "James Fanstone",
       title: "James Fanstone",
       description: "academic research management system"
     }
   ]
+
+  const [openDialog, setOpenDialog] = useState(false);
+  const [animate, setAnimate] = useState(false);
+  const [projects, setProjects] = useState<{id: number, href: string, src: string, alt: string, title: string, description: string}[]>(imgFields);
+  
+  
+
+  const handleClick = (id: string) => {
+   switch (id) {
+    case "all-projects":
+      setProjects(imgFields);
+      console.log("all projects", projects);
+      break;
+    case "web-sites":
+      setProjects(imgFields.filter((project) => project.category.includes("web-sites")));
+      console.log("web sites", projects);
+      break;
+    case "frontend":
+      setProjects(imgFields.filter((project) => project.category.includes("frontend")));
+      console.log("frontend", projects);
+      break;
+    default:
+      setProjects(imgFields);
+      console.log("default", projects);
+      break;
+   }
+  }
+
+  useEffect(() => {
+    setAnimate(true);
+    const timer = setTimeout(() => {
+      setAnimate(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [projects]);
+
   return (
     <main id="projects" className="container mx-auto px-6 py-12 min-h-auto">
       <div className="max-w-3xl space-y-8 ">
         <Typography variant="h1">Portfolio<span className="text-secondary">.</span></Typography>
-        <div className="flex gap-4 md:flex-row flex-col">
-        {imgFields.map((item => (
+          <ul className="flex gap-4">
+            <li id="all-projects" onClick={() => handleClick("all-projects")}>
+              <Typography className="text-sm sm:text-base hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
+                ALL PROJECTS
+              </Typography>
+            </li>
+            <li id="web-sites" onClick={() => handleClick("web-sites")}>
+              <Typography className="text-sm sm:text-base hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
+                WEB SITES
+              </Typography>
+            </li>
+            <li id="frontend" onClick={() => handleClick("frontend")}>
+              <Typography className="text-sm sm:text-base hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
+                FRONTEND
+              </Typography>
+            </li>
+          </ul>
+        <div className={`flex gap-4 md:flex-row flex-col ${animate ? "animate-fade-in-up" : ""}`}>
+        {projects.map((item => (
           <div
             key={item.id}
+                onClick={() => setOpenDialog(true)}
             className="w-auto max-w-[20rem] gap-4 flex flex-col  hover:cursor-pointer overflow-hidden"
           >
             <div className="w-full h-64 rounded-lg overflow-hidden ">
@@ -35,14 +89,13 @@ export default function PortfolioPage() {
                 width={1000}
                 height={1000}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-120"
-                onClick={() => setOpenDialog(true)}
                 quality={100}
                 priority={true}
               />
             </div>
-            <div>
-              <Typography variant="h3">{item.title}</Typography>
-              <Typography variant="h4" className="text-[#252525]/70">{item.description}</Typography>
+            <div >
+              <Typography className="hover:text-secondary hover:underline" variant="h3">{item.title}</Typography>
+              <Typography variant="h4">{item.description}</Typography>
             </div>
           </div>
         )))}
@@ -50,7 +103,7 @@ export default function PortfolioPage() {
       </div>
       <Dialog
         open={openDialog}
-        className="dialog !max-w-5xl w-full"
+        className="dialog !max-w-5xl w-full p-4 sm:p-12"
         onOpenChange={setOpenDialog}
         title="Institutional project for academic researches"
         subtitle="James Fanstone is a newly developed system designed to meet the institution's need for effective academic research management. Featuring over 10 interactive pages and with many more features planned, the platform offers a modern, clean interface focused on delivering an enhanced user experience."
@@ -65,11 +118,11 @@ export default function PortfolioPage() {
             alt="James Fanstone"
             width={1600}
             height={900}
-            className="w-auto h-full object-fit"
+            className="max-w-full h-auto object-contain"
           />
         </div>
-        <div className="flex gap-4 mt-4">
-          <Button variant="secondary" className="flex-1" onClick={() => setOpenDialog(false)}>Visit website</Button>
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <Button variant="secondary" className="flex-1" onClick={() => window.open("https://plataformajf.unievangelica.edu.br/", "_blank")}>Visit website</Button>
           <Button variant="default" className="flex-1" onClick={() => setOpenDialog(false)}>Close</Button>
         </div>
       </Dialog>

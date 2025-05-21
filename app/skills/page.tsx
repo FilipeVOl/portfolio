@@ -1,9 +1,11 @@
 import { Typography } from "@/components/ui/typography";
 import SkillCard from "../components/SkillCard";
+import CodeIcon from "../components/CodeIcon";
 
 export default function SkillsPage() {
   return (
-    <main className="container mx-auto px-6 py-12 min-h-auto">
+    <main id="skills">
+      <div className="main-content main-icon">
         <div className="flex flex-col md:grid md:grid-cols-[1fr_2fr] gap-8">
           <div className="max-w-3xl space-y-4">
             <Typography variant="h1" className="text-start">Skills<span className="text-secondary">.</span></Typography>
@@ -15,6 +17,7 @@ export default function SkillsPage() {
                 <SkillCard id="backend-skills" title="Backend development" content="Node.js, Express, PHP, Laravel" />
             </div>
         </div>
+      </div>
     </main>
   );
 }

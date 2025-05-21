@@ -38,16 +38,12 @@ const Dialog = ({
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className={className}>
         <DialogHeader>
-          <DialogTitle>
-            <Typography className="text-left" variant="h3">
-              {title}
-              <span className="text-secondary">.</span>
-            </Typography>
+          <DialogTitle className="text-left scroll-m-20 text-2xl font-semibold tracking-tight">
+            {title}
+            <span className="text-secondary">.</span>
           </DialogTitle>
-          <DialogDescription>
-            <Typography className="text-left" variant="lead">
-              {subtitle}
-            </Typography>
+          <DialogDescription className="text-sm/6 font-medium text-left">
+            {subtitle}
           </DialogDescription>
           {inline && (
             <div className="flex gap-2">

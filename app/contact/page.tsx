@@ -15,11 +15,13 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const invalids: string[] = [];
-    if (!name) invalids.push("name");
-    if (!email) invalids.push("email");
-    if (!message) invalids.push("message");
+    if (!name || name === "") invalids.push("name");
+    if (!email || email === "") invalids.push("email");
+    if (!message || message === "") invalids.push("message");
 
     setInvalidFields(invalids);
+
+    if (invalids.length > 0) return;
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -38,7 +40,7 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="container mx-auto px-6 py-12 min-h-auto" id="contact">
+    <main id="contact" className="container mx-auto px-6 py-12 min-h-auto">
       <div className="md:grid md:grid-cols-[1fr_2fr] md:gap-8 items-start">
         <div className="max-w-md space-y-4">
           <Typography variant="h1" className="mb-2 text-start">
@@ -89,7 +91,7 @@ const ContactPage = () => {
         onOpenChange={setOpenSuccess}
         title="Your message has been sent"
         subtitle="Thank you for contacting me! I will get back to you soon."
-        className="bg-primary-background dialog"
+        className="bg-primary-background dark:bg-[#181818] dialog"
       >
         <div className="text-left">
           <Button className="px-12" onClick={() => setOpenSuccess(false)}>Close</Button>

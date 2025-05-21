@@ -3,12 +3,13 @@
 
 @layer base {
   body {
-    @apply bg-primary-background;
+    @apply bg-primary-background dark:bg-primary-background-dark;
   }
 }
 
 @theme {
   --color-primary-background: #fffafa;
+  --color-primary-background-dark: #181818;
   --color-primary: #011638;
   --color-primary-text: #1b1b1b;
   --color-secondary: #489FB5;
@@ -64,6 +65,10 @@
     opacity: 1 !important;
     margin-top: 0.5em;
   }
+  .dialog {
+    max-width: 95vw !important;
+    padding: 1rem !important;
+  }
 }
 
 .dialog {
@@ -72,6 +77,8 @@
   outline: none !important;
   background-color: var(--color-primary-background) !important;
   animation: fadeInUp 0.5s cubic-bezier(.39,.575,.565,1) both;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 @media (max-width: 912px) {
@@ -94,5 +101,40 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+
+main {
+  height: 100%;
+  max-height: 1104px;
+  padding: 3rem 1.5rem;
+  overflow: auto;
+  max-width: 1104px;
+  margin: 0 auto;
+}
+
+.main-content.main-icon {
+  position: relative;
+  padding-bottom: 120px;
+}
+.main-content.main-icon::after {
+  content: '';
+  position: absolute;
+  left: 15%;
+  transform: translateX(-50%);
+  top: 60%;
+  width: 100px;
+  height: 100px;
+  background: url('/code.svg') no-repeat center center/contain;
+  opacity: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 766px) {
+  .main-content.main-icon::after {
+    display: none;
+  }
+  .main-content.main-icon {
+    padding-bottom: 70px;
   }
 }

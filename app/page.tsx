@@ -6,6 +6,7 @@ import PortfolioPage from "./portfolio/page";
 import Divider from "./components/Divider";
 import EducationPage from "./education/page";
 import ContactPage from "./contact/page";
+import CodeIcon from "./components/CodeIcon";
 export default function Home() {
   return (
     <motion.div
