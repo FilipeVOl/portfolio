@@ -23,7 +23,7 @@ export default function AboutPage() {
               <Typography variant="inline" className="text-muted-foreground">+55 (62) 98259-5874</Typography>
               
               <Typography variant="inline" className="font-medium">EMAIL</Typography>
-              <Typography variant="inline" className="text-muted-foreground">filipegrodriguesreal@gmail.com</Typography>
+              <Typography variant="inline" >filipegrodriguesreal@gmail.com</Typography>
               
               <Typography variant="inline" className="font-medium">SOCIAL</Typography>
               <div className="flex gap-8">

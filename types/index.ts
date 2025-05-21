@@ -8,6 +8,7 @@ export interface TimelineElement {
   id: number;
   date: string;
   title: string;
+  company?: string;
   description: string;
   icon?: ReactNode | (() => ReactNode);
   status?: TimelineStatus;

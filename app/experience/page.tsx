@@ -1,75 +1,31 @@
 'use client';
 
 import { experienceItems } from "./timeline-items";
-import { Timeline } from "@/components/ui/timeline/timeline";
 import { Typography } from "@/components/ui/typography";
-import { motion } from "motion/react";
-import { Variants } from "motion/react";
-import { useState, useEffect } from "react";
 import Image from "next/image";
-export default function ExperiencePage() {
-  const [isWide, setIsWide] = useState(true);
-  useEffect(() => {
-    function handleResize() {
-      setIsWide(window.innerWidth >= 750);
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+import Divider from "../components/Divider";
 
-  // Variants para animação
-  const imageVariants: Variants = {
-    offscreen: {
-      y: 300,
-    },
-    onscreen: {
-      y: 50,
-      rotate: isWide ? -10 : 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-      },
-    },
-  };
-  
+export default function ExperiencePage() {
+
   return (
     <main className="container px-6 py-12 min-h-auto mx-auto">
-      <div className="md:grid md:grid-cols-2 md:gap-8">
-        <div className="max-w-3xl space-y-8 items-center ">
+      <div className="md:grid md:grid-cols-[1fr_2fr] md:gap-8">
+        <div className="max-w-md space-y-8 items-center">
           <Typography variant="h1">Experience<span className="text-secondary">.</span></Typography>
-          <Typography variant="p">I have worked as a frontend developer for Unievangélica since 2022, contributing to the development of different projects alongside the demands.</Typography>
-          {isWide && (
-          <motion.div
-            className="md:col-start-2 md:row-start-2 self-center"
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ amount: 0.8, once: true }}
-            variants={imageVariants}
-            style={{
-              width: isWide ? 500 : "80vw", 
-              maxWidth: 350,
-              marginTop: 32,
-              borderRadius: 20,
-             
-            }}
-          >
-            <Image
-              src="/code.png"
-              alt="Graduation" 
-              width={500}
-              height={500}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              priority
-              />
-            </motion.div>
-          )}
+          <Typography variant="lead">I have worked as a frontend developer for Unievangélica since 2022, contributing to the development of different projects alongside the demands.</Typography>
         </div>
-        <div>
-          <Timeline 
-            items={experienceItems}
-          />
+        <div className="max-w-full">
+          {experienceItems.map((item) => (
+            <div key={item.id}>
+              <div className="flex mt-6 md:mt-0 gap-2 items-center">
+              <Typography className="font-bold" variant="h3">{item.title}</Typography>
+              <Typography className="leading-none font-medium italic" noMargin variant="lead">{item.company}</Typography>
+              </div>
+              <Typography className="mt-0" noMargin variant="subdesc">{item.date}</Typography>
+              <Typography variant="subdesc">{item.description}</Typography>
+              {experienceItems.indexOf(item) !== experienceItems.length - 1 && <Divider />}
+            </div>
+          ))}
         </div>
       </div>
     </main>

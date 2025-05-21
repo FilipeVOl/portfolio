@@ -13,7 +13,7 @@ const meta: Meta<typeof Typography> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["h1", "h2", "h3", "h4", "p", "blockquote", "list", "inline", "lead"],
+      options: ["h1", "h2", "h3", "h4", "p", "blockquote", "list", "inline", "lead", "subdesc"],
     },
   },
 }
@@ -95,6 +95,13 @@ export const WithCustomClass: Story = {
     variant: "h1",
     className: "text-blue-500 italic",
     children: "Custom styled heading",
+  },
+}
+
+export const Subdesc: Story = {
+  args: {
+    variant: "subdesc",
+    children: "This is a subdescription",
   },
 }
 
