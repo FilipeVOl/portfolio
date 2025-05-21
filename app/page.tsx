@@ -21,8 +21,8 @@ export default function Home() {
       <Divider />
       <EducationPage />
       <Divider />
-      {/* <PortfolioPage /> */}
-      {/* <Divider /> */}
+      <PortfolioPage />
+      <Divider />
       <ContactPage />
     </motion.div>
   );

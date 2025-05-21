@@ -66,9 +66,33 @@
   }
 }
 
+.dialog {
+  border: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  background-color: var(--color-primary-background) !important;
+  animation: fadeInUp 0.5s cubic-bezier(.39,.575,.565,1) both;
+}
+
 @media (max-width: 912px) {
   .date {
     color: white !important;
     opacity: 1 !important;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s cubic-bezier(.39,.575,.565,1) both;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

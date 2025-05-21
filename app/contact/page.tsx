@@ -2,9 +2,40 @@
 
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
+import { useState } from "react";
+import Dialog from "../components/Dialog";
 
 const ContactPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [invalidFields, setInvalidFields] = useState<string[]>([]);
+  const [openSuccess, setOpenSuccess] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const invalids: string[] = [];
+    if (!name) invalids.push("name");
+    if (!email) invalids.push("email");
+    if (!message) invalids.push("message");
+
+    setInvalidFields(invalids);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      setOpenSuccess(true);
+      form.reset();
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+  };
 
   return (
     <main className="container mx-auto px-6 py-12 min-h-auto" id="contact">
@@ -14,33 +45,37 @@ const ContactPage = () => {
             Contact<span className="text-secondary">.</span>
           </Typography>
           <Typography variant="lead" className="mb-4 max-w-sm">
-            Are you working on something great? I would love to help make it happen! Drop me a letter and start your project right now! Just do it.
+            Are you interested in my services? I would love to help make it happen! Send me a message and let's start your project!.
           </Typography>
        
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST" className="flex flex-col gap-4 w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+         
           <input type="hidden" name="access_key" value="a46a66dd-b920-47d8-9da8-1f7928f993a9" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
-              required
               name="first_name"
               placeholder="Name"
-              className="outline-none w-full rounded-md border-2 border-primary p-2 focus:border-secondary transition-all duration-300"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("name") ? "border-red-500" : ""}`}
             />
             <input
               type="email"
-              required
               name="email"
               placeholder="E-mail"
-              className="outline-none w-full rounded-md border-2 border-primary p-2 focus:border-secondary transition-all duration-300"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("email") ? "border-red-500" : ""}`}
             />
           </div>
           <textarea
             placeholder="Message"
             name="message"
-            required
-            className="outline-none w-full rounded-md border-2 border-primary p-2 min-h-[120px] focus:border-secondary transition-all duration-300"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+            className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("message") ? "border-red-500" : ""}`}
           />
           <div className="flex justify-end mt-2">
             <Button type="submit" className="btn btn-primary">
@@ -49,6 +84,17 @@ const ContactPage = () => {
           </div>
         </form>
       </div>
+      <Dialog
+        open={openSuccess}
+        onOpenChange={setOpenSuccess}
+        title="Your message has been sent"
+        subtitle="Thank you for contacting me! I will get back to you soon."
+        className="bg-primary-background dialog"
+      >
+        <div className="text-left">
+          <Button className="px-12" onClick={() => setOpenSuccess(false)}>Close</Button>
+        </div>
+      </Dialog>
     </main>
   );
 };
