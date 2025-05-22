@@ -11,64 +11,19 @@
   --color-primary: #011638;
   --color-primary-dark: #FFB6C1;
   --color-primary-text: #1b1b1b;
-  
   --color-secondary: #489FB5;
   --color-secondary-text: #EDE7E3;
   --color-tertiary: #2E294E;
 }
 
-.date {
-  color: var(--color-primary-text);
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
-.vertical-timeline::before {
-  background: var(--color-primary-text) !important;
-}
-
-@media (max-width: 600px) {
-  .vertical-timeline {
-    width: 100% !important;
-    padding: 1em 0 !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .vertical-timeline::before {
-    display: none !important;
-  }
-  .vertical-timeline-element-content {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0.5em !important;
-    min-width: 0 !important;
-    width: 95vw !important;
-    box-sizing: border-box;
-    float: none !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .vertical-timeline-element-icon {
-    display: none !important;
-  }
-  .date,
-  .vertical-timeline-element-date {
-    font-size: 0.85rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    word-break: break-word;
-    max-width: 90vw;
-    text-align: center;
-    font-style: italic;
-    opacity: 1 !important;
-    margin-top: 0.5em;
-  }
   .dialog {
     max-width: 95vw !important;
     padding: 1rem !important;
   }
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .dialog {
@@ -81,12 +36,6 @@
   max-height: 100vh;
 }
 
-@media (max-width: 912px) {
-  .date {
-    color: white !important;
-    opacity: 1 !important;
-  }
-}
 
 @layer utilities {
   .animate-fade-in-up {
@@ -107,7 +56,7 @@
 main {
   height: 100%;
   max-height: 1104px;
-  padding: 3rem 1.5rem;
+  padding: 30px;
   overflow: auto;
   max-width: 1104px;
   margin: 0 auto;
@@ -117,6 +66,7 @@ main {
   position: relative;
   padding-bottom: 120px;
 }
+
 .main-content.main-icon::after {
   content: '';
   position: absolute;
@@ -130,11 +80,11 @@ main {
   pointer-events: none;
 }
 
-@media (max-width: 766px) {
+@media (max-width: 1024px) {
   .main-content.main-icon::after {
     display: none;
   }
   .main-content.main-icon {
-    padding-bottom: 70px;
+    padding-bottom: 0px;
   }
 }

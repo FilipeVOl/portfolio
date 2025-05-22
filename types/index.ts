@@ -26,3 +26,14 @@ export interface TimelineProps {
   connectorColor?: TimelineColor;
   className?: string;
 }
+
+export interface SkillElement {
+  id: string;
+  title: string;
+  content: string;
+}
+
+export interface SkillProps {
+  items: SkillElement[];
+}
+
