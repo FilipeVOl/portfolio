@@ -11,7 +11,7 @@ export default function SkillsPage() {
       <div className="main-content main-icon">
         <div className="flex flex-col lg:flex-row gap-8 w-full">
           <div className="max-w-3xl space-y-4 w-full ">
-            <Typography variant="h1" className="text-start">Skills<span className="text-secondary">.</span></Typography>
+            <Typography variant="h2" className="text-start">Skills<span className="text-secondary">.</span></Typography>
             <Typography variant="lead" className="text-start">I have worked with most of the technologies that are turned to user interfaces, and lately i've been working with web development and also introducing myself to artificial intelligence.</Typography>
           </div>
           <div className="w-full">

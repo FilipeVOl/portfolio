@@ -41,20 +41,20 @@ export function Typography({
   const Component = variantElements[variant];
 
   const styles = cva(
-    "scroll-m-20 tracking-tight text-[#333333]",
+    "scroll-m-20 tracking-tight text-[#252525]",
     {
       variants: {
         variant: {
-          h1: "font-bold scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
-          h2: "font-bold scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
-          h3: "font-bold scroll-m-20 text-2xl font-semibold tracking-tight",
-          h4: "font-bold scroll-m-20 text-[18px] leading-[1.55] tracking-tight",
+          h1: "font-bold text-4xl font-extrabold tracking-tight lg:text-5xl",
+          h2: "font-bold text-[30px] tracking-tight leading-[1.4]",
+          h3: "font-bold text-2xl font-semibold tracking-tight",
+          h4: "font-bold text-[18px] leading-[1.55] tracking-tight",
           p: `leading-7 ${
             !noMargin ? "[&:not(:first-child)]:mt-6" : ""
           }`,
           blockquote: "font-bold mt-6 border-l-2 pl-6 italic",
           list: "font-bold my-6 ml-6 list-disc [&>li]:mt-2",
-          lead: "text-sm/6 font-medium",
+          lead: "text-[16px] leading-[1.56] opacity-80",
           inline: "inline-block",
           subdesc: "line-height-[1.5] font-medium text-[#777777] text-sm/6"
         },
