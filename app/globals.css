@@ -39,6 +39,10 @@ body {
   background-color: var(--color-primary-background-dark) !important;
 }
 
+.dark .dialog {
+  background-color: var(--color-primary-background-dark) !important;
+}
+
 .dialog {
   border: none !important;
   border-radius: 0 !important;

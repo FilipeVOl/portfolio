@@ -105,7 +105,7 @@ export default function PortfolioPage() {
       </div>
       <Dialog
         open={openDialog}
-        className="dialog !max-w-2xl !max-h-[90vh] p-8! w-full  sm:p-12"
+        className="dialog !max-w-2xl !max-h-[90vh] p-8! w-full sm:p-12"
         onOpenChange={setOpenDialog}
         title="Institutional project for academic researches"
         subtitle="James Fanstone is a newly developed system designed to meet the institution's need for effective academic research management. Featuring over 10 interactive pages and with many more features planned, the platform offers a modern, clean interface focused on delivering an enhanced user experience."
