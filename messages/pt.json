@@ -1,0 +1,56 @@
+{
+  "about": {
+    "title": "Sobre mim",
+    "description": "Sou um Desenvolvedor Front-End localizado em Anápolis, Goiás, Brasil. Atualmente trabalho como Desenvolvedor Front-End Júnior na Unievangélica, localizada em Anápolis. Estou ansioso para aprender, crescer como engenheiro de software e aprimorar minhas habilidades.",
+    "phone": "TELEFONE",
+    "email": "EMAIL",
+    "social": "SOCIAL",
+    "contact_me": "ENTRE EM CONTATO",
+    "download_cv": "BAIXAR CV",
+    "dialog_title": "Vamos trabalhar juntos",
+    "dialog_subtitle": "Você tem interesse nos meus serviços? Eu adoraria ajudar a tornar isso realidade! Envie-me uma mensagem e vamos começar seu projeto!",
+    "success_title": "Sua mensagem foi enviada",
+    "success_subtitle": "Obrigado por entrar em contato! Retornarei em breve.",
+    "send_message": "ENVIAR MENSAGEM",
+    "back_to_cv": "VOLTAR AO CV"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "description": "Trabalhei com a maioria das tecnologias voltadas para interfaces de usuário e, ultimamente, tenho trabalhado com desenvolvimento web e também me introduzido à inteligência artificial.",
+    "card": {
+      "title": "Desenvolvimento Frontend",
+      "description": "Trabalhei com a maioria das tecnologias voltadas para interfaces de usuário e, ultimamente, tenho trabalhado com desenvolvimento web e também me introduzido à inteligência artificial."
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "description": "Experiência"
+  },
+  "education": {
+    "title": "Educação",
+    "description": "Educação"
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "all_projects": "TODOS OS PROJETOS",
+    "web_sites": "SITES",
+    "frontend": "FRONTEND",
+    "project_title": "James Fanstone",
+    "project_description": "sistema de gestão de pesquisas acadêmicas",
+    "dialog_title": "Projeto institucional para pesquisas acadêmicas",
+    "dialog_subtitle": "James Fanstone é um sistema recém-desenvolvido para atender à necessidade da instituição de uma gestão eficaz de pesquisas acadêmicas. Com mais de 10 páginas interativas e muitos outros recursos planejados, a plataforma oferece uma interface moderna e limpa, focada em proporcionar uma experiência aprimorada ao usuário.",
+    "stack": "STACK",
+    "stack_desc": "ViteJS, TailwindCSS, MaterialUI, TypeScript, React, PHP, Laravel, MySQL",
+    "date": "DATA",
+    "date_desc": "2024",
+    "visit_website": "Visitar site",
+    "close": "Fechar"
+  },
+  "contact": {
+    "title": "Contato",
+    "description": "Você tem interesse nos meus serviços? Eu adoraria ajudar a tornar isso realidade! Envie-me uma mensagem e vamos começar seu projeto!",
+    "name": "Nome",
+    "email": "E-mail",
+    "send_message": "ENVIAR MENSAGEM"
+  }
+}

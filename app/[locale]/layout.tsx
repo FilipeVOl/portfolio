@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
+import "../globals.css";
+import Navbar from "../components/Navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,16 +21,21 @@ export const metadata: Metadata = {
   description: "Filipe's Portfolio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const messages = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={params.locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextIntlClientProvider messages={messages}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -44,6 +51,7 @@ export default function RootLayout({
           {children}
         </div>
         </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

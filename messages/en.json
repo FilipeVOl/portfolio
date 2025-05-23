@@ -1,0 +1,56 @@
+{
+    "about": {
+        "title": "About me",
+        "description": "I am a Front-End Developer located in Anápolis, Goiás, Brazil. I currently work as a part time Junior Front-End Developer for Unievangélica, located in Anápolis. I am eager to learn and grow as a software engineer and increase my skills.",
+        "phone": "PHONE",
+        "email": "EMAIL",
+        "social": "SOCIAL",
+        "contact_me": "CONTACT ME",
+        "download_cv": "DOWNLOAD CV",
+        "dialog_title": "Let's work together",
+        "dialog_subtitle": "Are you interested in my services? I would love to help make it happen! Send me a message and let's start your project!.",
+        "success_title": "Your message has been sent",
+        "success_subtitle": "Thank you for contacting me! I will get back to you soon.",
+        "send_message": "SEND MESSAGE",
+        "back_to_cv": "BACK TO CV"
+    },
+    "skills": {
+        "title": "Skills",
+        "description": "I have worked with most of the technologies that are turned to user interfaces, and lately I've been working with web development and also introducing myself to artificial intelligence.",
+        "card": {
+            "title": "Frontend development",
+            "description": "I have worked with most of the technologies that are turned to user interfaces, and lately I've been working with web development and also introducing myself to artificial intelligence."
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "description": "Experience"
+    },
+    "education": {
+        "title": "Education",
+        "description": "Education"
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "all_projects": "ALL PROJECTS",
+        "web_sites": "WEB SITES",
+        "frontend": "FRONTEND",
+        "project_title": "James Fanstone",
+        "project_description": "academic research management system",
+        "dialog_title": "Institutional project for academic researches",
+        "dialog_subtitle": "James Fanstone is a newly developed system designed to meet the institution's need for effective academic research management. Featuring over 10 interactive pages and with many more features planned, the platform offers a modern, clean interface focused on delivering an enhanced user experience.",
+        "stack": "STACK",
+        "stack_desc": "ViteJS, TailwindCSS, MaterialUI, TypeScript, React, PHP, Laravel, MySQL",
+        "date": "DATE",
+        "date_desc": "2024",
+        "visit_website": "Visit website",
+        "close": "Close"
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "Are you interested in my services? I would love to help make it happen! Send me a message and let's start your project!.",
+        "name": "Name",
+        "email": "E-mail",
+        "send_message": "SEND MESSAGE"
+    }
+}

@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import Dialog from "@/app/components/Dialog";
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
+  const t = useTranslations("about");
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openForm, setOpenForm] = useState(false);
   const [invalidFields, setInvalidFields] = useState<string[]>([]);
@@ -50,13 +52,10 @@ export default function AboutPage() {
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full min-h-[400px]">
           <div className="space-y-4 order-2 lg:order-1 h-full flex flex-col justify-center">
             <Typography variant="h1" className="leading-[1.25] ">
-              About <span className="text-secondary">me</span>
+              {t("title")} <span className="text-secondary">me</span>
             </Typography>
             <Typography variant="lead">
-              I am a Front-End Developer located in Anápolis, Goiás, Brazil. I
-              currently work as a part time Junior Front-End Developer for
-              Unievangélica, located in Anápolis. I am eager to learn and grow as
-              a software engineer and increase my skills.
+              {t("description")}
             </Typography>
             <div className="prose prose-lg dark:prose-invert">
               <Typography variant="blockquote">
