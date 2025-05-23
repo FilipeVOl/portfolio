@@ -41,11 +41,11 @@ export function Typography({
   const Component = variantElements[variant];
 
   const styles = cva(
-    "scroll-m-20 tracking-tight text-[#252525]",
+    "scroll-m-20 tracking-tight text-[#252525] dark:text-white ",
     {
       variants: {
         variant: {
-          h1: "font-bold text-4xl font-extrabold tracking-tight lg:text-5xl",
+          h1: "font-bold text-4xl dark:text-white font-extrabold tracking-tight lg:text-5xl",
           h2: "font-bold text-[30px] tracking-tight leading-[1.4]",
           h3: "font-bold text-2xl font-semibold tracking-tight",
           h4: "font-bold text-[18px] leading-[1.55] tracking-tight",

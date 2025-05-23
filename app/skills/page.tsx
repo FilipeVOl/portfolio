@@ -8,7 +8,7 @@ import React from "react";
 export default function SkillsPage() {
   return (
     <main id="skills">
-      <div className="main-content main-icon">
+      <div className="">
         <div className="flex flex-col lg:flex-row gap-8 w-full">
           <div className="max-w-3xl space-y-4 w-full ">
             <Typography variant="h2" className="text-start">Skills<span className="text-secondary">.</span></Typography>
@@ -22,7 +22,7 @@ export default function SkillsPage() {
                     <Typography className="font-bold mb-2" variant="h4">
                       {item.title}
                     </Typography>
-                    <Typography className="mb-2" noMargin variant="subdesc">
+                    <Typography className="mb-2" noMargin variant="subdesc">  
                       {item.content}
                     </Typography>
                     <div className="flex-grow" />

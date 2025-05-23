@@ -5,6 +5,9 @@
     @apply bg-primary-background dark:bg-primary-background-dark;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 @theme {
   --color-primary-background: #fffafa;
   --color-primary-background-dark: #181818;
@@ -26,6 +29,10 @@
   margin-right: -15px;
 }
 
+.dark .dialogContact {
+  background-color: var(--color-primary-background-dark) !important;
+}
+
 .dialog {
   border: none !important;
   border-radius: 0 !important;
@@ -36,19 +43,55 @@
   max-height: 100vh;
 }
 
+.dialogContact {
+  border: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  background-color: var(--color-primary-background) !important;
+  /* animation: fadeInUp 0.5s cubic-bezier(.39,.575,.565,1) both; */
+  overflow-y: auto;
+  max-height: 100vh;
+  min-width: 900px !important;
+}
+
+.dialogInput {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media (max-width: 990px) {
+  .dialogInput {
+    flex-direction: column;
+  }
+}
+
 
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeInUp 0.5s cubic-bezier(.39,.575,.565,1) both;
   }
+  .animate-fade-out-down {
+    animation: fadeOutDown 0.5s cubic-bezier(.39,.575,.565,1) both;
+  }
   @keyframes fadeInUp {
     0% {
       opacity: 0;
-      transform: translateY(-40px);
+      transform: translateY(40px);
     }
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  @keyframes fadeOutDown {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(40px);
     }
   }
 }
@@ -64,7 +107,6 @@ main {
 
 .main-content.main-icon {
   position: relative;
-  padding-bottom: 120px;
 }
 
 .main-content.main-icon::after {
@@ -72,12 +114,13 @@ main {
   position: absolute;
   left: 15%;
   transform: translateX(-50%);
-  top: 60%;
+  bottom: 20px;
   width: 100px;
   height: 100px;
   background: url('/code.svg') no-repeat center center/contain;
   opacity: 1;
   pointer-events: none;
+  z-index: 0;
 }
 
 @media (max-width: 1024px) {

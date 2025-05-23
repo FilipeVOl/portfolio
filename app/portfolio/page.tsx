@@ -57,24 +57,26 @@ export default function PortfolioPage() {
   return (
     <main id="projects" className="container mx-auto px-6 py-12 min-h-auto">
       <div className="max-w-3xl space-y-8 ">
-        <Typography variant="h1">Portfolio<span className="text-secondary">.</span></Typography>
-          <ul className="flex gap-4">
-            <li id="all-projects" onClick={() => handleClick("all-projects")}>
-              <Typography className="text-sm sm:text-base hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
+        <Typography variant="h2">Portfolio<span className="text-secondary">.</span></Typography>
+        <div className="overflow-x-auto max-w-[230px]">
+          <ul className="flex gap-4 whitespace-nowrap">
+            <li id="all-projects" onClick={() => handleClick("all-projects")} className="flex-shrink-0">
+              <Typography className="text-[12px] hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
                 ALL PROJECTS
               </Typography>
             </li>
-            <li id="web-sites" onClick={() => handleClick("web-sites")}>
-              <Typography className="text-sm sm:text-base hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
-                WEB SITES
+            <li id="web-sites" onClick={() => handleClick("web-sites")} className="flex-shrink-0">
+            <Typography className="text-[12px] hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
+            WEB SITES
               </Typography>
             </li>
-            <li id="frontend" onClick={() => handleClick("frontend")}>
-              <Typography className="text-sm sm:text-base hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
-                FRONTEND
+            <li id="frontend" onClick={() => handleClick("frontend")} className="flex-shrink-0">
+            <Typography className="text-[12px] hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
+            FRONTEND
               </Typography>
             </li>
           </ul>
+        </div>
         <div className={`flex gap-4 md:flex-row flex-col ${animate ? "animate-fade-in-up" : ""}`}>
         {projects.map((item => (
           <div
@@ -94,8 +96,8 @@ export default function PortfolioPage() {
               />
             </div>
             <div >
-              <Typography className="hover:text-secondary hover:underline" variant="h3">{item.title}</Typography>
-              <Typography variant="h4">{item.description}</Typography>
+              <Typography className="hover:text-secondary hover:underline" variant="h4">{item.title}</Typography>
+              <Typography variant="lead">{item.description}</Typography>
             </div>
           </div>
         )))}
@@ -103,7 +105,7 @@ export default function PortfolioPage() {
       </div>
       <Dialog
         open={openDialog}
-        className="dialog !max-w-5xl w-full p-4 sm:p-12"
+        className="dialog !max-w-2xl !max-h-[90vh] p-8! w-full  sm:p-12"
         onOpenChange={setOpenDialog}
         title="Institutional project for academic researches"
         subtitle="James Fanstone is a newly developed system designed to meet the institution's need for effective academic research management. Featuring over 10 interactive pages and with many more features planned, the platform offers a modern, clean interface focused on delivering an enhanced user experience."

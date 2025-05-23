@@ -40,10 +40,10 @@ const ContactPage = () => {
   };
 
   return (
-    <main id="contact" className="container mx-auto px-6 py-12 min-h-auto">
+    <main id="contact" className="container mx-auto px-6 py-12 min-h-auto main-content main-icon">
       <div className="md:grid md:grid-cols-[1fr_2fr] md:gap-8 items-start">
         <div className="max-w-md space-y-4">
-          <Typography variant="h1" className="mb-2 text-start">
+          <Typography variant="h2" className="mb-2 text-start">
             Contact<span className="text-secondary">.</span>
           </Typography>
           <Typography variant="lead" className="mb-4 max-w-sm">
@@ -61,7 +61,7 @@ const ContactPage = () => {
               placeholder="Name"
               value={name}
               onChange={e => setName(e.target.value)}
-              className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("name") ? "border-red-500" : ""}`}
+              className={`dark:border-white outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("name") ? "border-red-500" : ""}`}
             />
             <input
               type="email"
@@ -69,7 +69,7 @@ const ContactPage = () => {
               placeholder="E-mail"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("email") ? "border-red-500" : ""}`}
+              className={`dark:border-white outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("email") ? "border-red-500" : ""}`}
             />
           </div>
           <textarea
@@ -77,7 +77,7 @@ const ContactPage = () => {
             name="message"
             value={message}
             onChange={e => setMessage(e.target.value)}
-            className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("message") ? "border-red-500" : ""}`}
+            className={`dark:border-white outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${invalidFields.includes("message") ? "border-red-500" : ""}`}
           />
           <div className="flex justify-end mt-2">
             <Button type="submit" className="btn btn-primary">

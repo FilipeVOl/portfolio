@@ -49,7 +49,7 @@ export default function AboutPage() {
       <div className="max-w-3xl min-w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full min-h-[400px]">
           <div className="space-y-4 order-2 md:order-1 h-full flex flex-col justify-center">
-            <Typography variant="h1">
+            <Typography variant="h1" className="leading-[1.25]">
               About <span className="text-secondary">me</span>
             </Typography>
             <Typography variant="lead">
@@ -94,7 +94,7 @@ export default function AboutPage() {
           <Dialog
             open={openForm}
             onOpenChange={setOpenForm}
-            className="dialog"
+            className="dialogContact dark:bg-[#181818]"
             title="Let's work together"
             subtitle="Are you interested in my services? I would love to help make it happen! Send me a message and let's start your project!."
             trigger={
@@ -112,14 +112,15 @@ export default function AboutPage() {
                 name="access_key"
                 value="a46a66dd-b920-47d8-9da8-1f7928f993a9"
               />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex dialogInput gap-6">
+              <div className="flex flex-col gap-4 min-w-[333px]">
                 <input
                   type="text"
                   name="first_name"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                   placeholder="Name"
-                  className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${
+                  className={`dark:border-white outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${
                     invalidFields.includes("name") ? "border-red-500" : ""
                   }`}
                 />
@@ -129,23 +130,29 @@ export default function AboutPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   placeholder="E-mail"
-                  className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${
+                  className={`dark:border-white outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${
                     invalidFields.includes("name") ? "border-red-500" : ""
                   }`}
                 />
               </div>
+              <div className="min-w-[436px]">
               <textarea
                 placeholder="Message"
                 name="message"
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
-                className={`outline-none w-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${
+                className={`dark:border-white outline-none w-full h-full px-4 py-4 border-2 border-primary/10 p-2 hover:border-secondary hover:brightness-125 hover:shadow-secondary/50 hover:shadow-md focus:border-secondary transition-all duration-300 ${
                   invalidFields.includes("name") ? "border-red-500" : ""
                 }`}
               />
-              <div className="flex justify-end mt-4">
-                <Button type="submit" className="btn btn-primary">
+              </div>
+              </div>
+              <div className="flex justify-start mt-4 gap-4">
+                <Button type="submit" variant="default">
                   SEND MESSAGE
+                </Button>
+                <Button type="reset" onClick={() => setOpenForm(false)} variant="secondary">
+                  BACK TO CV
                 </Button>
               </div>
             </form>
