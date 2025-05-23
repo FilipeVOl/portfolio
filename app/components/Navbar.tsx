@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Link } from '@/components/ui/link'
 import { Typography } from '@/components/ui/typography'
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Flag } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export default function Navbar() {
@@ -35,13 +35,19 @@ export default function Navbar() {
           <Link variant="default" className='text-[12px]' targetId="contact">
             Contact
           </Link>
+          <div className="flex gap-2">
           <Button
+            className="min-w-0"
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             {theme === "dark" ? <Sun /> : <Moon />}
           </Button>
+          <Button className="min-w-4" variant="ghost" size="icon">
+            <Flag />
+          </Button>
+          </div>
         </div>
       </div>
     </nav>

@@ -58,7 +58,7 @@ export default function PortfolioPage() {
     <main id="projects" className="container mx-auto px-6 py-12 min-h-auto">
       <div className="max-w-3xl space-y-8 ">
         <Typography variant="h2">Portfolio<span className="text-secondary">.</span></Typography>
-        <div className="overflow-x-auto max-w-[230px]">
+        <div className="overflow-x-auto max-w-[250px]">
           <ul className="flex gap-4 whitespace-nowrap">
             <li id="all-projects" onClick={() => handleClick("all-projects")} className="flex-shrink-0">
               <Typography className="text-[12px] hover:text-secondary active:text-secondary hover:cursor-pointer hover:underline active:underline" variant="h3">
@@ -124,8 +124,8 @@ export default function PortfolioPage() {
           />
         </div>
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <Button variant="secondary" className="flex-1" onClick={() => window.open("https://plataformajf.unievangelica.edu.br/", "_blank")}>Visit website</Button>
-          <Button variant="default" className="flex-1" onClick={() => setOpenDialog(false)}>Close</Button>
+          <Button variant="secondary" className="" onClick={() => window.open("https://plataformajf.unievangelica.edu.br/", "_blank")}>Visit website</Button>
+          <Button variant="default" className="" onClick={() => setOpenDialog(false)}>Close</Button>
         </div>
       </Dialog>
     </main>

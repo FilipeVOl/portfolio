@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 @layer base {
     @apply bg-primary-background dark:bg-primary-background-dark;
 }
@@ -17,6 +18,11 @@
   --color-secondary: #489FB5;
   --color-secondary-text: #EDE7E3;
   --color-tertiary: #2E294E;
+}
+
+body {
+  margin: 8px;
+  font-family: 'Lato', sans-serif;
 }
 
   .dialog {
@@ -61,11 +67,43 @@
 }
 
 @media (max-width: 990px) {
+  .containerOrder {
+    order: 2;
+  }
+  .containerAbout {
+    grid-template-columns: 1fr;
+  }
   .dialogInput {
     flex-direction: column;
   }
 }
 
+.imageProfile {
+  width: 500px !important;
+  height: 500px !important;
+  object-fit: cover;
+}
+
+@media (max-width: 990px) {
+  .imageProfile {
+    width: 500px !important;
+    height: 500px !important;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 1124px) {
+  .imageProfile {
+    width: 400px !important;
+    height: 400px !important;
+  }
+}
+
+/* @media (min-width: 990px) {
+  .imageProfile {
+    width: 100% !important;
+  }
+} */
 
 @layer utilities {
   .animate-fade-in-up {
@@ -103,6 +141,7 @@ main {
   overflow: auto;
   max-width: 1104px;
   margin: 0 auto;
+  overflow-x: auto;
 }
 
 .main-content.main-icon {
@@ -123,7 +162,23 @@ main {
   z-index: 0;
 }
 
+.containerOrder {
+  order: 1;
+}
+
+.containerAbout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
 @media (max-width: 1024px) {
+  .imageProfile {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: contain;
+  }
+  
   .main-content.main-icon::after {
     display: none;
   }

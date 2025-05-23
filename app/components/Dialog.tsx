@@ -39,7 +39,7 @@ const Dialog = ({
       <DialogContent className={className}>
         <DialogHeader>
           <DialogTitle className="text-left">
-            <Typography variant="h2" className="text-[36px]">{title}<span className="text-secondary">.</span></Typography>
+            <Typography variant="h1" className="text-[36px] leading-[1.25]">{title}<span className="text-secondary">.</span></Typography>
           </DialogTitle>
           <DialogDescription className="text-left">
             <Typography variant="lead">{subtitle}</Typography>
@@ -51,7 +51,7 @@ const Dialog = ({
                   <Typography className="text-start text-[12px] font-bold pr-4" variant="inline">
                     {inline}
                   </Typography>
-                  <Typography className="text-left flex-wrap" variant="inline">
+                  <Typography className="text-left flex-wrap" variant="inline" className="text-[12px] opacity-80">
                     {inline_desc}
                   </Typography>
                 </>
@@ -61,7 +61,7 @@ const Dialog = ({
                   <Typography className="text-start text-[12px] font-bold pr-4" variant="inline">
                     {inline_2}
                   </Typography>
-                  <Typography className="text-left flex-wrap" variant="inline">
+                  <Typography className="text-left flex-wrap" variant="inline" className="text-[12px] opacity-80">
                     {inline_desc_2}
                   </Typography>
                 </>

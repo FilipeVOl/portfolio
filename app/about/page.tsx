@@ -47,9 +47,9 @@ export default function AboutPage() {
   return (
     <main id="about" className="container mx-auto px-6 py-12 min-h-auto">
       <div className="max-w-3xl min-w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full min-h-[400px]">
-          <div className="space-y-4 order-2 md:order-1 h-full flex flex-col justify-center">
-            <Typography variant="h1" className="leading-[1.25]">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full min-h-[400px]">
+          <div className="space-y-4 order-2 lg:order-1 h-full flex flex-col justify-center">
+            <Typography variant="h1" className="leading-[1.25] ">
               About <span className="text-secondary">me</span>
             </Typography>
             <Typography variant="lead">
@@ -61,19 +61,19 @@ export default function AboutPage() {
             <div className="prose prose-lg dark:prose-invert">
               <Typography variant="blockquote">
                 <div className="grid grid-cols-[80px_1fr] gap-y-2">
-                  <Typography variant="inline" className="font-medium">
+                  <Typography variant="inline" className="font-medium text-[12px]">
                     PHONE
                   </Typography>
-                  <Typography variant="inline" className="text-muted-foreground">
+                  <Typography variant="inline" className="text-muted-foreground text-[12px]">
                     +55 (62) 98259-5874
                   </Typography>
-                  <Typography variant="inline" className="font-medium">
+                  <Typography variant="inline" className="font-medium text-[12px]">
                     EMAIL
                   </Typography>
-                  <Typography variant="inline">
+                  <Typography variant="inline" className="text-[12px]">
                     filipegrodriguesreal@gmail.com
                   </Typography>
-                  <Typography variant="inline" className="font-medium">
+                  <Typography variant="inline" className="font-medium text-[12px]">
                     SOCIAL
                   </Typography>
                   <div className="flex gap-8">
@@ -164,13 +164,14 @@ export default function AboutPage() {
           </a>
         </div>
           </div>
-          <div className="w-full min-w-full flex justify-center order-1 md:order-2">
+          <div className="order-1 lg:order-2">
             <Image
               src="/foto.jpeg"
               alt="Filipe"
               width={500}
               height={500}
-              className="object-cover  rounded-lg shadow-lg"
+              quality={100}
+              className="object-cover imageProfile"
             />
           </div>
         </div>
