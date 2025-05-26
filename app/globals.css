@@ -59,9 +59,12 @@ body {
   outline: none !important;
   background-color: var(--color-primary-background) !important;
   /* animation: fadeInUp 0.5s cubic-bezier(.39,.575,.565,1) both; */
-  overflow-y: auto;
+  overflow-x: auto !important;
   max-height: 100vh;
-  min-width: 900px !important;
+  box-sizing: border-box;
+  max-width: 95vw !important;
+  width: 100vw !important;
+  /* min-width: 900px !important; */
 }
 
 .dialogInput {
@@ -93,6 +96,12 @@ body {
     width: 500px !important;
     height: 500px !important;
     min-width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .dialogContact {
+    max-width: 900px !important;
   }
 }
 

@@ -48,7 +48,7 @@ const Dialog = ({
             <div className="grid grid-cols-[auto_1fr] gap-x-2 gap-y-1 mb-2">
               {inline && (
                 <>
-                  <Typography className="text-start text-[12px] font-bold pr-4" variant="inline">
+                  <Typography className="text-start text-[12px] font-bold pr-0 sm:pr-4" variant="inline">
                     {inline}
                   </Typography>
                   <Typography className="text-left flex-wrap" variant="inline" className="text-[12px] opacity-80">
@@ -58,7 +58,7 @@ const Dialog = ({
               )}
               {inline_2 && (
                 <>
-                  <Typography className="text-start text-[12px] font-bold pr-4" variant="inline">
+                  <Typography className="text-start text-[12px] font-bold pr-0 sm:pr-4" variant="inline">
                     {inline_2}
                   </Typography>
                   <Typography className="text-left flex-wrap" variant="inline" className="text-[12px] opacity-80">

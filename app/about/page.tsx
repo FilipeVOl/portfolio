@@ -105,15 +105,15 @@ export default function AboutPage() {
           >
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 w-full"
+              className="flex flex-col gap-4 max-w-[100%]"
             >
               <input
                 type="hidden"
                 name="access_key"
                 value="a46a66dd-b920-47d8-9da8-1f7928f993a9"
               />
-              <div className="flex dialogInput gap-6">
-              <div className="flex flex-col gap-4 min-w-[333px]">
+              <div className="dialogInput gap-6 w-full">
+              <div className="flex flex-col gap-4 w-full">
                 <input
                   type="text"
                   name="first_name"
@@ -135,7 +135,7 @@ export default function AboutPage() {
                   }`}
                 />
               </div>
-              <div className="min-w-[436px]">
+              <div className="w-full">
               <textarea
                 placeholder="Message"
                 name="message"
@@ -147,7 +147,7 @@ export default function AboutPage() {
               />
               </div>
               </div>
-              <div className="flex justify-start mt-4 gap-4">
+              <div className="flex flex-col sm:flex-row justify-start mt-4 gap-4">
                 <Button type="submit" variant="default">
                   SEND MESSAGE
                 </Button>
