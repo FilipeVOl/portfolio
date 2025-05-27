@@ -18,6 +18,7 @@
   --color-secondary: #489FB5;
   --color-secondary-text: #EDE7E3;
   --color-tertiary: #2E294E;
+  --breakpoint-slg: 990px;
 }
 
 body {
@@ -41,6 +42,43 @@ body {
 
 .dark .dialog {
   background-color: var(--color-primary-background-dark) !important;
+}
+
+.dark .dialogMenu {
+  background-color: var(--color-primary-background-dark) !important;
+}
+
+.dialogMenu {
+  border-radius: 0 !important;
+  background-color: var(--color-primary) !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  border: none !important;
+  position: fixed !important;
+  animation: pullDown 0.5s cubic-bezier(.39,.575,.565,1) both;
+}
+
+/* Quando o dialog estiver fechando */
+.dialogMenu[data-state="closed"] {
+  animation: pullUp 0.5s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes pullDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pullUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 .dialog {
@@ -125,6 +163,12 @@ body {
   .animate-fade-out-down {
     animation: fadeOutDown 0.5s cubic-bezier(.39,.575,.565,1) both;
   }
+  .animate-pull-down {
+    animation: pullDown 0.5s cubic-bezier(.39,.575,.565,1) both;
+  }
+  .animate-pull-up {
+    animation: pullUp 0.5s cubic-bezier(.39,.575,.565,1) both;
+  }
   @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -143,6 +187,22 @@ body {
     100% {
       opacity: 0;
       transform: translateY(40px);
+    }
+  }
+  @keyframes pullDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pullUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
     }
   }
 }
