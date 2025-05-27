@@ -44,7 +44,9 @@ const Link = React.forwardRef<HTMLDivElement, LinkProps>(
       if (targetId) {
         const element = document.getElementById(targetId)
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" })
+          const yOffset = -72;
+          const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       }
       onClick?.()

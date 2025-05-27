@@ -41,46 +41,49 @@ export default function Navbar() {
 
   return (
     <nav className="w-full px-6">
-      <div className="container flex items-center justify-center md:justify-between h-full mx-auto">
+      <div className="container flex items-center justify-between h-full mx-auto">
         <Link variant="default" targetId="home">
           <Typography className='text-[24px]' variant="h2">Filipe<span className="text-secondary">.dev</span></Typography>
         </Link>
 
-        <div className="relative slg:hidden block">
-          <Dialog
-          open={openMenu}
-          onOpenChange={setOpenMenu}
-          trigger={<Menu className="hover:scale-110 transition-all duration-300 hover:cursor-pointer text-secondary"/>}
-          children={<ul className="flex flex-col items-center  gap-4 uppercase font-bold leading-[1.66]">
+        <div className="flex gap-4 items-center ml-auto">
+          <div className='hidden slg:flex gap-4'>
             {linkFields.map((link) => (
-              <Link onClick={() => setOpenMenu(false)} variant="default" className='text-[12px] text-white hover:cursor-pointer hover:scale-105 transition-all duration-300' targetId={link.id}>
+              <Link key={link.id} variant="default" className='text-[12px]' targetId={link.id}>
                 {link.label}
               </Link>
             ))}
-          </ul>
-          }
-          className="dialogMenu dark:bg-[#181818] text-white"
-          />
-        </div>
-        
-        <div className="hidden slg:flex flex gap-4">
-          {linkFields.map((link) => (
-            <Link variant="default" className='text-[12px]' targetId={link.id}>
-              {link.label}
-            </Link>
-          ))}
-          <div className="flex gap-2">
-          <Button
-            className="min-w-0"
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            {theme === "dark" ? <Sun /> : <Moon />}
-          </Button>
-          <Button className="min-w-4" variant="ghost" size="icon">
-            <Flag />
-          </Button>
+          </div>
+          <div className="flex gap-2 items-center">
+          <div className="slg:hidden block">
+              <Dialog
+                open={openMenu}
+                onOpenChange={setOpenMenu}
+                trigger={<Menu className="hover:scale-110 transition-all duration-300 hover:cursor-pointer text-secondary" />}
+                children={
+                  <ul className="flex flex-col items-center gap-4 uppercase font-bold leading-[1.66]">
+                    {linkFields.map((link) => (
+                      <Link key={link.id} onClick={() => setOpenMenu(false)} variant="default" className='text-[12px] text-white hover:cursor-pointer hover:scale-105 transition-all duration-300' targetId={link.id}>
+                        {link.label}
+                      </Link>
+                    ))}
+                  </ul>
+                }
+                className="dialogMenu dark:bg-[#181818] text-white"
+              />
+            </div>
+            <Button
+              className="min-w-0"
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? <Sun /> : <Moon />}
+            </Button>
+            <Button className="min-w-4" variant="ghost" size="icon">
+              <Flag />
+            </Button>
+            
           </div>
         </div>
       </div>
