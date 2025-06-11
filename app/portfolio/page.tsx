@@ -51,7 +51,7 @@ export default function PortfolioPage() {
   }, [projects]);
 
   return (
-    <main id="projects" className="overflow-y-hidden container mx-auto px-6 py-12 min-h-auto">
+    <main id="portfolio" className="container mx-auto px-6 py-12 min-h-auto">
       <div className="max-w-3xl space-y-8 ">
         <Typography variant="h2">Portfolio<span className="text-secondary">.</span></Typography>
         <div className="overflow-x-auto max-w-[250px]">
