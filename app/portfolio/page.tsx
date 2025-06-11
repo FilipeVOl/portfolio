@@ -29,19 +29,15 @@ export default function PortfolioPage() {
    switch (id) {
     case "all-projects":
       setProjects(imgFields);
-      console.log("all projects", projects);
       break;
     case "web-sites":
       setProjects(imgFields.filter((project) => project.category.includes("web-sites")));
-      console.log("web sites", projects);
       break;
     case "frontend":
       setProjects(imgFields.filter((project) => project.category.includes("frontend")));
-      console.log("frontend", projects);
       break;
     default:
       setProjects(imgFields);
-      console.log("default", projects);
       break;
    }
   }
@@ -55,7 +51,7 @@ export default function PortfolioPage() {
   }, [projects]);
 
   return (
-    <main id="projects" className="container mx-auto px-6 py-12 min-h-auto">
+    <main id="projects" className="overflow-y-hidden container mx-auto px-6 py-12 min-h-auto">
       <div className="max-w-3xl space-y-8 ">
         <Typography variant="h2">Portfolio<span className="text-secondary">.</span></Typography>
         <div className="overflow-x-auto max-w-[250px]">
@@ -77,30 +73,32 @@ export default function PortfolioPage() {
             </li>
           </ul>
         </div>
-        <div className={`flex gap-4 md:flex-row flex-col ${animate ? "animate-fade-in-up" : ""}`}>
-        {projects.map((item => (
-          <div
-            key={item.id}
-                onClick={() => setOpenDialog(true)}
-            className="w-auto max-w-[20rem] gap-4 flex flex-col  hover:cursor-pointer overflow-hidden"
-          >
-            <div className="w-full h-64 rounded-lg overflow-hidden ">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={1000}
-                height={1000}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-120"
-                quality={100}
-                priority={true}
-              />
-            </div>
-            <div >
-              <Typography className="hover:text-secondary hover:underline" variant="h4">{item.title}</Typography>
-              <Typography variant="lead">{item.description}</Typography>
-            </div>
+        <div className="overflow-hidden">
+          <div className={`flex gap-4 md:flex-row flex-col ${animate ? "animate-fade-in-up" : ""}`}>
+            {projects.map((item => (
+              <div
+                key={item.id}
+                    onClick={() => setOpenDialog(true)}
+                className="w-auto max-w-[20rem] gap-4 flex flex-col  hover:cursor-pointer overflow-hidden"
+              >
+                <div className="w-full h-64 rounded-lg overflow-hidden ">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-120"
+                    quality={100}
+                    priority={true}
+                  />
+                </div>
+                <div >
+                  <Typography className="hover:text-secondary hover:underline" variant="h4">{item.title}</Typography>
+                  <Typography variant="lead">{item.description}</Typography>
+                </div>
+              </div>
+            )))}
           </div>
-        )))}
         </div>
       </div>
       <Dialog

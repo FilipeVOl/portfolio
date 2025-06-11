@@ -25,7 +25,6 @@ export default function AboutPage() {
     setInvalidFields(invalids);
 
     if (invalids.length > 0) return;
-    console.log(invalids);
 
     const form = e.currentTarget;
     const formData = new FormData(form);
