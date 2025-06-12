@@ -11,11 +11,20 @@ export default function PortfolioPage() {
     {
       id: 3,
       href: "https://plataformajf.unievangelica.edu.br/",
-      category: ["web-sites", "frontend"],
+      category: ["frontend"],
       src: "/fanstone.png",
       alt: "James Fanstone",
       title: "James Fanstone",
       description: "academic research management system"
+    },
+    {
+      id: 4,
+      href: "https://booking-list-p3vm.vercel.app/",
+      category: ["frontend", "web-sites"],
+      src: "/booking.png",
+      alt: "Booking List",
+      title: "Booking List",
+      description: "fullstack application for booking management"
     }
   ]
 
