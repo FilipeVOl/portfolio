@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Dialog from "../components/Dialog";
 import { Button } from "@/components/ui/button";
+import { DialogClose } from "@/components/ui/dialog";
 
 export default function PortfolioPage() {
   const imgFields = [
@@ -30,8 +31,8 @@ export default function PortfolioPage() {
 
   const [openDialog, setOpenDialog] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const [projects, setProjects] = useState<{id: number, href: string, src: string, alt: string, title: string, description: string}[]>(imgFields);
-  
+  const [projects, setProjects] = useState<{id: number, href: string, src: string, alt: string, title: string, description: string, category: string[]}[]>(imgFields);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
   
 
   const handleClick = (id: string) => {
@@ -58,6 +59,12 @@ export default function PortfolioPage() {
     }, 500);
     return () => clearTimeout(timer);
   }, [projects]);
+
+  console.log(selectedProject)
+
+  // Obter o projeto selecionado
+  const selected = selectedProject !== null ? imgFields.find(p => p.id === selectedProject) : null;
+
 
   return (
     <main id="portfolio" className="container mx-auto px-6 py-12 min-h-auto">
@@ -87,7 +94,10 @@ export default function PortfolioPage() {
             {projects.map((item => (
               <div
                 key={item.id}
-                    onClick={() => setOpenDialog(true)}
+                onClick={() => {
+                  setSelectedProject(item.id);
+                  setOpenDialog(true);
+                }}
                 className="w-auto max-w-[20rem] gap-4 flex flex-col  hover:cursor-pointer overflow-hidden"
               >
                 <div className="w-full h-64 rounded-lg overflow-hidden ">
@@ -111,28 +121,34 @@ export default function PortfolioPage() {
         </div>
       </div>
       <Dialog
-        open={openDialog}
+        open={selectedProject !== null}
         className="dialog !max-w-2xl !max-h-[90vh] p-8! w-full sm:p-12"
-        onOpenChange={setOpenDialog}
-        title="Institutional project for academic researches"
-        subtitle="James Fanstone is a newly developed system designed to meet the institution's need for effective academic research management. Featuring over 10 interactive pages and with many more features planned, the platform offers a modern, clean interface focused on delivering an enhanced user experience."
+        onOpenChange={(open) => setSelectedProject(open ? selectedProject : null)}
+        title={selected?.title}
+        subtitle={selected?.description}
         inline="STACK"
         inline_desc="ViteJS, TailwindCSS, MaterialUI, TypeScript, React, PHP, Laravel, MySQL"
         inline_2="DATE"
         inline_desc_2="2024"
       >
         <div className="w-full rounded-lg overflow-hidden flex items-center justify-center bg-neutral-100">
-          <Image
-            src="/fanstone2.png"
-            alt="James Fanstone"
-            width={1600}
-            height={900}
-            className="max-w-full h-auto object-contain"
-          />
+          {selected && (
+            <Image
+              src={selected.src}
+              alt={selected.alt}
+              width={1600}
+              height={900}
+              className="max-w-full h-auto object-contain"
+            />
+          )}
         </div>
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <Button variant="secondary" className="" onClick={() => window.open("https://plataformajf.unievangelica.edu.br/", "_blank")}>Visit website</Button>
-          <Button variant="default" className="" onClick={() => setOpenDialog(false)}>Close</Button>
+          {selected && (
+            <Button variant="secondary" className="" onClick={() => window.open(selected.href, "_blank")}>Visit website</Button>
+          )}
+          <DialogClose asChild>
+            <Button variant="default" className="">Close</Button>
+          </DialogClose>
         </div>
       </Dialog>
     </main>
