@@ -9,11 +9,11 @@ export const skillItems: SkillElement[] = [
   {
     id: "web-skills",
     title: "Web development",
-    content: "Docker, Storybook, MongoDB, PostgreSQL"
+    content: "Docker, Storybook, MongoDB, PostgreSQL, Streamlit"
   },
   {
     id: "backend-skills",
     title: "Backend development",
-    content: "Node.js, Express, PHP, Laravel"
+    content: "Python, Node.js, Express, PHP, Laravel"
   }
 ];
